@@ -320,7 +320,7 @@ def handle_bgmi(message):
         else:
             response = "✅ Usage :- /golem <target> <port> <time>"  # Updated command syntax
     else:
-        response = ("🚫 Unauthorized Access! 🚫\n\n𝗗𝗢𝗡𝗢 𝗖𝗛𝗔𝗡𝗡𝗘𝗟 𝗝𝗢𝗜𝗡 𝗞𝗔𝗥 𝗙𝗜𝗥 𝗚𝗢𝗟𝗘𝗠 𝗢𝗪𝗡𝗘𝗥 𝗞𝗢 𝗨𝗦𝗘𝗥 𝗜𝗗 𝗕𝗛𝗘𝗝
+        response = ("Unauthorized Access!\n\n𝗗𝗢𝗡𝗢 𝗖𝗛𝗔𝗡𝗡𝗘𝗟 𝗝𝗢𝗜𝗡 𝗞𝗔𝗥 𝗙𝗜𝗥 𝗚𝗢𝗟𝗘𝗠 𝗢𝗪𝗡𝗘𝗥 𝗞𝗢 𝗨𝗦𝗘𝗥 𝗜𝗗 𝗕𝗛𝗘𝗝
  \n\n @golemhacks AND @golemfeedbacks \n\n @GOLEM_OWNER ")
 
     bot.reply_to(message, response)
