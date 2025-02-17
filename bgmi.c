@@ -148,7 +148,7 @@ int is_expired() {
         char decoded_error_message[512];
         base64_decode(encoded_error_message, decoded_error_message);
         fprintf(stderr, "Error: %s\n", decoded_error_message);
-        open_url("https://t.me/shan_ddos");
+        open_url("golemddos");
         return 1;
     }
     return 0;
@@ -156,15 +156,15 @@ int is_expired() {
 
 void open_url(const char *url) {
     if (system("command -v xdg-open > /dev/null") == 0) {
-        system("xdg-open https://t.me/shan_ddos");
+        system("xdg-open golemddos");
     } else if (system("command -v gnome-open > /dev/null") == 0) {
-        system("gnome-open https://t.me/shan_ddos");
+        system("gnome-open golemddos");
     } else if (system("command -v open > /dev/null") == 0) {
-        system("open https://t.me/shan_ddos");
+        system("open golemddos");
     } else if (system("command -v start > /dev/null") == 0) {
-        system("start https://t.me/shan_ddos");
+        system("start golem ddos");
     } else {
-        fprintf(stderr, "My channel link https://t.me/shan_ddos\n");
+        fprintf(stderr, "My channel link @golemhacks\n");
     }
 }
 
